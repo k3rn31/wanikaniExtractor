@@ -1,0 +1,14 @@
+{
+  "name": "wanikani_export",
+  "version": "1.0.0",
+  "description": "Extracts passed vocabulary from WaniKani.",
+  "main": "index.js",
+  "scripts": {
+    "extract": "node main.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "node-fetch": "^2.6.0"
+  }
+}
