@@ -93,14 +93,14 @@ async function getPassedVocabulary(pageUrl) {
   try {
     const url = pageUrl ? pageUrl : 'https://api.wanikani.com/v2/assignments?passed=true&subject_types=vocabulary';
     const response = await fetch(url, {headers: {'Authorization': `Bearer ${apiToken}`}});
-      let data = await response.json();
+    let data = await response.json();
 
     let next_page = data.pages.next_url;
-      data = data.data;
+    data = data.data;
 
     if (next_page) {
       let temp_data = await getPassedVocabulary(next_page);
-      data = data.data.concat(temp_data);
+      data = data.concat(temp_data);
     }
 
     return data;
